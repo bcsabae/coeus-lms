@@ -1,0 +1,20 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+$body-bg: #ffffff;
+
+$theme-colors: (
+    "primary": #4281A4,
+    "secondary": #FFB800,
+    "green": #79B473,
+    "dark": #051923
+);
+
+// Generate `.bg-*` color utilities
+@each $color, $value in $theme-colors {
+    @include bg-variant('.bg-#{$color}', $value);
+}
+
+//add bigger spacers
+$spacers: map-merge((
+    6: ($spacer * 5),
+    7: ($spacer * 8)), $spacers);
